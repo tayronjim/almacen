@@ -31,3 +31,28 @@ class pcdescr3{
     conRed: any
     infoRed: any
 }
+
+export class NewItemAlmacen{
+    item:generalDesc = new generalDesc;
+    nombreAlmacen:any
+    stock:Stock = new Stock
+    lote:any
+}
+
+class generalDesc{
+    nombre:any
+    descr:any
+    codigoBarraItem:any
+}
+
+class Stock{
+    cantidad:any
+    unidad:any
+    min:any
+    max:any
+}
+
+
+export class Proveedores{
+    nombre:any
+}

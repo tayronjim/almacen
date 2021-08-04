@@ -17,7 +17,7 @@
     </mat-tab>
 
 <!-- Tab grupo 2-->
-    <mat-tab label="Info 2"> 
+    <mat-tab label="Datos Computo"> 
         <div class="sec-pc-1" [style.display]="(sec_pc_1 === false) ? 'none' : 'block' ">
             <table class="tab-pc-1 tab_form" >
                 <thead>
@@ -101,9 +101,74 @@
 
 
 
-    <mat-tab label="Info 3"> 
+    <mat-tab label="Datos almacen"> 
         <!-- Tab grupo 3-->
-        Content 3 
+
+        <label for="" class="lblCampoForm">Nombre</label><br>
+        <input type="text" name="nombreItemAlmacen" [(ngModel)]="almacen.item.nombre"><br>
+
+        <label for="" class="lblCampoForm">Cantidad</label><br>
+        <input type="text" name="cantidadItemAlmacen" [(ngModel)]="almacen.stock.cantidad"><br>
+
+        <label for="" class="lblCampoForm">Unidad</label><br>
+        <select name="unidadItemAlmacen" [(ngModel)]=almacen.stock.unidad>
+            <option *ngFor="let unidad of unidades" [value]="unidad.ID">{{unidad.nombre}}</option>
+        </select><br>
+
+        <label for="" class="lblCampoForm">Almacen</label><br>
+        <select name="nombreAlmacen" [(ngModel)]="almacen.nombreAlmacen">
+            <option *ngFor="let almacen of almacenes" [value]="almacen.ID">{{almacen.ID + ": " + almacen.nombre}}</option>
+        </select><br>
+
+        <label for="" class="lblCampoForm">Lote</label><br>
+        <select name="loteAlmacen" [(ngModel)]="almacen.lote">
+            <option *ngFor="let lote of lotes" [value]="lote.ID">{{lote.nombre}}</option>
+        </select><br>
+        
+        
+        <label for="" class="lblCampoForm">Stock Minimo</label><br>
+        <input type="text" name="stockMinItem" [(ngModel)]="almacen.stock.min"><br>
+
+        <label for="" class="lblCampoForm">Stock Maximo</label><br>
+        <input type="text" name="stockMaxItem" [(ngModel)]="almacen.stock.max"><br>
+
+        <label for="" class="lblCampoForm">Codigo de Barras</label><br>
+        <input type="text" name="codigoBarraItem" [(ngModel)]="almacen.item.codigoBarraItem"><br>
+
+        <label for="" class="lblCampoForm">Descripción</label><br>
+        <textarea name="descrItem" [(ngModel)]="almacen.item.descr"></textarea><br>
+
+        
+
+
+
+        <!--     
+        
+
+
+       
+
+
+        
+
+        
+
+       
+
+        <label for="" class="lblCampoForm">Manufacturero</label><br>
+        <input type="text" name="nombreItem" [(ngModel)]="nombreItem">
+
+
+        -->
+    </mat-tab>
+
+    <mat-tab label="Proveedores"> 
+        <!-- Infor 4  --   Datos de proveedores-->
+
+        <label for="" class="lblCampoForm">Proveedor</label><br>
+        <input type="text" name="nombreProv" [(ngModel)]="proveedor.nombre">
+
+
     </mat-tab>
   </mat-tab-group>
 
