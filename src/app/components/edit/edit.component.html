@@ -1,0 +1,110 @@
+<p>edit works!</p>
+
+
+<!-- Tab grupo 1-->
+<mat-tab-group>
+    <mat-tab label="Info 1"> 
+
+        <label for="" class="lblCampoForm">Fecha de Alta</label><br>
+        <input type="datetime-local" [value]="fecha" name="fecha_alta" [(ngModel)]="fecha" ><br>
+
+        <label for="" class="lblCampoForm">Nombre</label><br>
+        <input type="text" class="txtnombreitem" name="nombreItem" [(ngModel)]="item.nombreItem"><br>
+
+        <label for="" class="lblCampoForm">Descripción</label><br>
+        <textarea name="descripcion" [(ngModel)]="item.descripcion"></textarea><br>
+
+    </mat-tab>
+
+<!-- Tab grupo 2-->
+    <mat-tab label="Info 2"> 
+        <div class="sec-pc-1" [style.display]="(sec_pc_1 === false) ? 'none' : 'block' ">
+            <table class="tab-pc-1 tab_form" >
+                <thead>
+                    <tr>
+                        <td class="tdfirst">Marca</td>
+                        <td>Modelo</td>
+                        <td class="tdlast">N/S</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="tdfirst"><input type="text" name="marca_item" [(ngModel)]="item.pcdescr1.marcaItem"></td>
+                        <td><input type="text" name="modelo_item" [(ngModel)]="item.pcdescr1.modeloItem"></td>
+                        <td class="tdlast"><input type="text" name="serie_item" id="serieItem" [(ngModel)]="item.pcdescr1.serieItem"></td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td class="tdfirst"></td>
+                        <td></td>
+                        <td class="tdlast"></td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+        
+        <div class="sec-pc-2" [style.display]="(sec_pc_2 == false) ? 'none' : 'block' ">
+            <table class="tab-pc-2  tab_form" >
+                <thead>
+                    <tr>
+                        <td class="tdfirst">Procesador</td>
+                        <td>RAM</td>
+                        <td>Disco Duro Capacidad</td>
+                        <td class="tdlast">Disco Duro Tipo</td> 
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="tdfirst"><input type="text" name="cpu_item" id="cpuItem" [(ngModel)]="item.pcdescr2.cpuItem"></td>
+                        <td><input type="text" name="ram_item" id="ramItem" [(ngModel)]="item.pcdescr2.ramItem"></td>
+                        <td><input type="text" name="dd_capacidad" id="ddCapacidad" [(ngModel)]="item.pcdescr2.ddCapacidad"></td>
+                        <td class="tdlast"><input type="text" name="dd_tipo" id="ddTipo" [(ngModel)]="item.pcdescr2.ddTipo"></td>
+                        <td class="tdlast"><input type="text" name="pantalla_tamano" id="pantallaTamano" [(ngModel)]="item.pcdescr2.pantallaTamano"></td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td class="tdfirst"></td>
+                        <td></td>
+                        <td></td>
+                        <td class="tdlast"></td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+        
+        <div class="sec-pc-3" [style.display]="(sec_pc_3 == false) ? 'none' : 'block' ">
+            <table class="tab-pc-3  tab_form">
+                <thead><tr><td class="tdfirst">Tipo de consumible</td><td>Modelo Consumible</td><td>Tamaños de papel</td><td>Conexion de red</td><td  class="tdlast">Información de red</td> </tr></thead>
+                <tbody>
+                    <tr>
+                        <td class="tdfirst"><input type="text" name="tipo_tinta" id="tipoTinta" [(ngModel)]="item.pcdescr3.tipoTinta"></td>
+                        <td><input type="text" name="modelo_tinta" id="modeloTinta" [(ngModel)]="item.pcdescr3.modeloTinta"></td>
+                        <td><input type="text" name="tamano_papel" id="tamanoPapel" [(ngModel)]="item.pcdescr3.tamanoPapel"></td>
+                        <td><select name="con_red" id="conRed" [(ngModel)]="item.pcdescr3.conRed"><option value="si">SI</option><option value="no">NO</option></select></td>
+                        <td class="tdlast"><textarea name="info_red" id="infoRed" [(ngModel)]="item.pcdescr3.infoRed"></textarea></td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td class="tdfirst"></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="tdlast"></td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </mat-tab>
+
+
+
+    <mat-tab label="Info 3"> 
+        <!-- Tab grupo 3-->
+        Content 3 
+    </mat-tab>
+  </mat-tab-group>
+
+ 

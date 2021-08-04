@@ -1,0 +1,57 @@
+div[class^=sec-pc]{
+    font-family: arial;
+    
+}
+.tab_form{
+    border: 2px solid #eed8b0;
+    border-radius: 10px;
+    border-spacing: 0;
+    margin: 30px 0px;
+}
+.tab_form thead{
+    background-color: #eed8b0;
+}
+.tab_form thead td{
+    height: 23px;
+    text-align: center;
+    font-size: 12px;
+    font-weight: bold;
+}
+.tab_form thead .tdfirst{
+    border-top-left-radius: 10px;
+}
+.tab_form thead .tdlast{
+    border-top-right-radius: 10px;
+}
+.tab_form tbody input{
+    width: 95%;
+    height: 100%;
+    text-align: center;
+    border:0;
+}
+.tab_form tbody td{
+    border-left: 1px solid #eed8b0;
+    border-right: 1px solid #eed8b0;
+    text-align: center;
+}
+.tab_form tbody .tdfirst{
+    border-left: 0px solid #eed8b0;
+}
+.tab_form tbody .tdlast{
+    border-right: 0px solid #eed8b0;
+}
+
+.tab_form tfoot{
+    background-color: #eed8b0;
+}
+
+.tab_form tfoot td{
+    height: 23px;
+}
+
+.tab_form tfoot .tdfirst{
+    border-bottom-left-radius: 10px;
+}
+.tab_form tfoot .tdlast{
+    border-bottom-right-radius: 10px;
+}
