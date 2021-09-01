@@ -1,13 +1,19 @@
 export class NewItem{
-    statusItem:any;
-    nombreItem!: String
-    idItem: any
-    fechaAlta: Date = new Date();
-    categoria: any
-    descripcion: any
+    statusItem:any = "";
+    idItem: any = ""
+    categoria: any = ""
+
+    infobase: InfoBase = new InfoBase
+    
     pcdescr1: pcdescr1 = new pcdescr1
     pcdescr2: pcdescr2 = new pcdescr2
     pcdescr3: pcdescr3 = new pcdescr3
+}
+
+class InfoBase{
+    nombreItem: String = ""
+    fechaAlta: Date = new Date();
+    descripcion: any = ""
 }
 
 class pcdescr1{
@@ -55,4 +61,18 @@ class Stock{
 
 export class Proveedores{
     nombre:any
+    manufactureroNombre:any
+    estatus: any
+    codigo: any
+    rs: any
+    rfc: any
+    calificacion: any
+    notas: any
+    tel: any
+    dir: any
+    giro: any
+    industria: any
+    email: any
+    web: any
+    contacto: any
 }

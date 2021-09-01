@@ -61,8 +61,34 @@ exports.loginUser = (req, res, next) => {
     });
 }
 
-exports.guardaInventario = (req, res, next) => {
+function buscaIDAutonumerico(){
+    var id = 2;
     mongo.connect().then(async ()=>{
-        mongo.db().collection('items').insertOne(req.body, ()=>{res.json({resultado:"correcto", datos:req.body})});
+        id=3;
+        console.log("3");
+        var autonumerico = mongo.db().collection('items').findOne({'_id':"autonumerico"});
+        if(!autonumerico){
+            console.log("4");
+            mongo.db().collection('items').insertOne({'_id':"autonumerico", 'id':0});
+            id=0;
+            console.log(id);
+        }
+        else{
+            
+            id = autonumerico.id;
+            console.log(autonumerico);
+        }
+        
     });
+    return id;
+
+}
+
+exports.guardaInventario = (req, res, next) => {
+    var id = buscaIDAutonumerico();
+    console.log(id);
+   // req.body.id = id;
+   // mongo.connect().then(async ()=>{
+       // mongo.db().collection('items').insertOne(req.body, ()=>{res.json({resultado:"correcto", datos:req.body})});
+//  });
 }

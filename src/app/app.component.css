@@ -1,0 +1,12 @@
+.divmenuizq{
+    width: 10%;
+    height: 100%;
+    float: left;
+    background-color: bisque;
+}
+.divareacentral{
+    width: 90%;
+    height: 100%;
+    float: left;
+    background-color: aqua;
+}

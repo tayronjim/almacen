@@ -4,7 +4,7 @@
   "description": "conexiones a la base de datos",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon server.js"
+    "start": "nodemon index.js"
   },
   "author": "Tayron Jimenez",
   "license": "ISC",
@@ -17,7 +17,8 @@
     "jsonwebtoken": "^8.5.1",
     "mongodb": "^4.0.1",
     "mongoose": "^5.13.4"
-  }
+  },
+  "type":"module"
   
 }
 

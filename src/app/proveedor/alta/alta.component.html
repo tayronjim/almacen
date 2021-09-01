@@ -1,0 +1,236 @@
+<p>proveedor works!</p>
+Estatus
+        codigo
+        nombre
+        razon social
+        rfc
+        calificacion
+        notas
+        direccion[
+            calle
+            no ext
+            no int
+            colonia
+            cp
+            ciudad
+            estado
+            pais
+            Otros
+        ]
+        telefono
+        giro/rubro
+        correo
+        siitio web
+        contacto[
+            nombre
+            puesto
+            telefono
+            correo
+        ]
+
+
+        estatus
+        codigo
+        rs
+        rfc
+        calificacion
+        notas
+        tel
+        dir
+        giro
+        industria
+        email
+        web
+        contacto
+
+<br><br>
+
+
+
+<table>
+    <tr>
+        <td>
+            <label for="" class="lblCampoForm">Codigo</label><br>
+            <input type="text" [(ngModel)]="proveedor.codigo">
+        </td>
+        <td>
+            <label for="" class="lblCampoForm">Nombre</label><br>
+            <input type="text" [(ngModel)]="proveedor.nombre">
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <label for="" class="lblCampoForm">Razon Social</label><br>
+            <input type="text" [(ngModel)]="proveedor.rs">
+        </td>
+        <td>
+            <label for="" class="lblCampoForm">RFC</label><br>
+            <input type="text" [(ngModel)]="proveedor.rfc">
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <label for="" class="lblCampoForm">Calificación</label><br>
+            <input type="text" [(ngModel)]="proveedor.calificacion">
+        </td>
+        <td>
+            <label for="" class="lblCampoForm">Notas</label><br>
+            <input type="text" [(ngModel)]="proveedor.notas">
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <label for="" class="lblCampoForm">Telefono</label><br>
+            <input type="text" [(ngModel)]="proveedor.tel">
+        </td>
+        <td>
+            <label for="" class="lblCampoForm">Correo</label><br>
+            <input type="text" [(ngModel)]="proveedor.email">
+        </td>
+        <td>
+            <label for="" class="lblCampoForm">Sitio Web</label><br>
+            <input type="text" [(ngModel)]="proveedor.web">
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <label for="" class="lblCampoForm">Giro / Rubro</label><br>
+            <input type="text" [(ngModel)]="proveedor.giro">
+        </td>
+        <td>
+            <label for="" class="lblCampoForm">Industria</label><br>
+            <input type="text" [(ngModel)]="proveedor.industria">
+        </td>
+    </tr>
+</table>
+
+
+
+<mat-expansion-panel hideToggle>
+    <mat-expansion-panel-header>
+      <mat-panel-title> Dirección </mat-panel-title>
+      <mat-panel-description> Dirección del Proveedor </mat-panel-description>
+    </mat-expansion-panel-header>
+
+    <table>
+        <thead> </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <label for="" class="lblCampoForm">Sucursal</label><br>
+                    <input type="text" [(ngModel)]="direccion.sucursal">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="" class="lblCampoForm">Calle</label><br>
+                    <input type="text" [(ngModel)]="direccion.calle">
+                </td>
+                <td>
+                    <label for="" class="lblCampoForm">No. Ext</label><br>
+                    <input type="text" [(ngModel)]="direccion.noext">
+                </td>
+                <td>
+                    <label for="" class="lblCampoForm">No. Int</label><br>
+                    <input type="text" [(ngModel)]="direccion.noint">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="" class="lblCampoForm">Colonia</label><br>
+                    <input type="text" [(ngModel)]="direccion.colonia">
+                </td>
+                <td>
+                    <label for="" class="lblCampoForm">C. P.</label><br>
+                    <input type="text" [(ngModel)]="direccion.cp">
+                </td>
+                <td>
+
+                </td>
+            </tr>
+  
+            <tr>
+                <td><label for="" class="lblCampoForm">Ciudad</label><br>
+                    <input type="text" [(ngModel)]="direccion.ciudad"></td>
+                <td><label for="" class="lblCampoForm">Estado</label><br>
+                    <input type="text" [(ngModel)]="direccion.estado"></td>
+                <td><label for="" class="lblCampoForm">Pais</label><br>
+                    <input type="text" [(ngModel)]="direccion.pais"></td>
+            </tr>
+           
+            <tr>
+                <td colspan="3">
+                    <label for="" class="lblCampoForm">Otro</label><br>
+                    <textarea name="" id="" cols="30" rows="10" [(ngModel)]="direccion.otro"></textarea>
+                </td>
+            </tr>
+           
+        </tbody>
+    </table>
+</mat-expansion-panel>
+
+<mat-expansion-panel hideToggle>
+    <mat-expansion-panel-header>
+      <mat-panel-title> Contacto </mat-panel-title>
+      <mat-panel-description> Contacto del Proveedor </mat-panel-description>
+    </mat-expansion-panel-header>
+
+    <table id="tblContacto">
+        <thead></thead>
+        <tbody>
+            <tr>
+                <td><label for="" class="lblCampoForm">Nombre</label><br>
+                    <input type="text" [(ngModel)]="contactos[0].nombre"></td>
+                <td><label for="" class="lblCampoForm">Puesto</label><br>
+                    <input type="text" [(ngModel)]="contactos[0].puesto"></td>
+                <td><label for="" class="lblCampoForm">Telefono</label><br>
+                    <input type="text" [(ngModel)]="contactos[0].telefono"></td>
+                <td><label for="" class="lblCampoForm">Correo</label><br>
+                    <input type="text" [(ngModel)]="contactos[0].email"></td>
+            </tr>
+            
+        </tbody>
+        <tfoot></tfoot>
+    </table>
+    <button mat-raised-button color="primary" (click)="append()" >[ + ]</button>  
+  </mat-expansion-panel>
+
+  
+<table mat-table [dataSource]="dataSource">
+
+    <ng-container matColumnDef="Contactos">
+        <th mat-header-cell *matHeaderCellDef> Contacto </th>
+        <td mat-cell *matCellDef="let i = index"> Contacto {{i+1}}: 
+
+            <table>
+                <thead></thead>
+                <tbody>
+                    <tr>
+                        <td><label for="" class="lblCampoForm">Nombre</label><br>
+                            <input type="text" [(ngModel)]="contactos[0].nombre"></td>
+                        <td><label for="" class="lblCampoForm">Puesto</label><br>
+                            <input type="text" [(ngModel)]="contactos[0].puesto"></td>
+                        <td><label for="" class="lblCampoForm">Telefono</label><br>
+                            <input type="text" [(ngModel)]="contactos[0].telefono"></td>
+                        <td><label for="" class="lblCampoForm">Correo</label><br>
+                            <input type="text" [(ngModel)]="contactos[0].email"></td>
+                    </tr>
+                    
+                </tbody>
+                <tfoot></tfoot>
+            </table>
+
+        </td>
+    </ng-container>
+
+    
+   
+    
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+</table>
+
+
+  <button mat-raised-button color="primary" (click)="guardar()" >Guardar</button>

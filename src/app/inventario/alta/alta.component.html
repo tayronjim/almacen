@@ -8,10 +8,10 @@
 <input type="datetime-local" [value]="fecha" name="fecha_alta" [(ngModel)]="fecha" ><br>
 
 <label for="" class="lblCampoForm">Nombre</label><br>
-<input type="text" class="txtnombreitem" name="nombreItem" [(ngModel)]="item.nombreItem"><br>
+<input type="text" class="txtnombreitem" name="nombreItem" [(ngModel)]="item.infobase.nombreItem"><br>
 
 <label for="" class="lblCampoForm">Descripción</label><br>
-<textarea name="descripcion" [(ngModel)]="item.descripcion"></textarea><br>
+<textarea name="descripcion" [(ngModel)]="item.infobase.descripcion"></textarea><br>
 
 <label for="" class="lblCampoForm">Categoria</label><br>
 <select name="categoria" id="slcCategoria" [(ngModel)]="item.categoria" (change)="fnSlcCategoria($event)">
@@ -54,7 +54,8 @@
                 <td class="tdfirst">Procesador</td>
                 <td>RAM</td>
                 <td>Disco Duro Capacidad</td>
-                <td class="tdlast">Disco Duro Tipo</td> 
+                <td>Disco Duro Tipo</td> 
+                <td class="tdlast">Tamaño Pantalla</td> 
             </tr>
         </thead>
         <tbody>
@@ -62,13 +63,14 @@
                 <td class="tdfirst"><input type="text" name="cpu_item" id="cpuItem" [(ngModel)]="item.pcdescr2.cpuItem"></td>
                 <td><input type="text" name="ram_item" id="ramItem" [(ngModel)]="item.pcdescr2.ramItem"></td>
                 <td><input type="text" name="dd_capacidad" id="ddCapacidad" [(ngModel)]="item.pcdescr2.ddCapacidad"></td>
-                <td class="tdlast"><input type="text" name="dd_tipo" id="ddTipo" [(ngModel)]="item.pcdescr2.ddTipo"></td>
+                <td><input type="text" name="dd_tipo" id="ddTipo" [(ngModel)]="item.pcdescr2.ddTipo"></td>
                 <td class="tdlast"><input type="text" name="pantalla_tamano" id="pantallaTamano" [(ngModel)]="item.pcdescr2.pantallaTamano"></td>
             </tr>
         </tbody>
         <tfoot>
             <tr>
                 <td class="tdfirst"></td>
+                <td></td>
                 <td></td>
                 <td></td>
                 <td class="tdlast"></td>
@@ -117,4 +119,5 @@
 -->
 
 
-<input type="submit" value="enviar" (click)="guardar()">
+<input mat-raised-button color="primary" type="submit" value="enviar" (click)="guardar()">
+

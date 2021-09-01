@@ -1,8 +1,10 @@
 import { Binary } from '@angular/compiler';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import {NewItem} from 'src/app/clases/clases';
 import { CrudService } from 'src/app/service/crud.service';
 import {listas} from 'src/app/global/global';
+import { AltaProveedor } from '../../proveedor/alta/alta.component';
+
 
 
 @Component({
@@ -11,7 +13,9 @@ import {listas} from 'src/app/global/global';
   styleUrls: ['./alta.component.css']
 })
 
-export class AltaComponent implements OnInit {
+export class AltaInventario implements OnInit {
+
+  @ViewChild(AltaProveedor) proveedor:any;
 
   idItem:String = "";
   fechaAlta!:Date;
@@ -36,31 +40,30 @@ export class AltaComponent implements OnInit {
   constructor(private crudService:CrudService) { 
     this.item =  new NewItem;
     
-  
   }
 
   ngOnInit(): void {
     this.sec_pc_1 = this.sec_pc_2 = this.sec_pc_3 = false;
 
-    
-    
+    console.log(this.item);
+
   }
 
   guardar(){
     
-    this.item.fechaAlta = new Date();
-    this.anio = this.item.fechaAlta.getUTCFullYear(); //año
-    this.mes = this.item.fechaAlta.getUTCMonth() + 1; //mes
-    this.dia = this.item.fechaAlta.getUTCDate(); //dia
-    this.hora = this.item.fechaAlta.getUTCHours() - 5; //hora
-    this.minuto = this.item.fechaAlta.getUTCMinutes(); //minuto
+    this.item.infobase.fechaAlta = new Date();
+    this.anio = this.item.infobase.fechaAlta.getUTCFullYear(); //año
+    this.mes = this.item.infobase.fechaAlta.getUTCMonth() + 1; //mes
+    this.dia = this.item.infobase.fechaAlta.getUTCDate(); //dia
+    this.hora = this.item.infobase.fechaAlta.getUTCHours() - 5; //hora
+    this.minuto = this.item.infobase.fechaAlta.getUTCMinutes(); //minuto
     this.fecha = this.anio + "-" + ("0"+this.mes).slice(-2) + "-" + ("0"+this.dia).slice(-2) + "T" + ("0"+this.hora).slice(-2) + ":" + ("0"+this.minuto).slice(-2);
 
-    //2021-08-03T16:45
+    this.item.statusItem = "Nuevo";
     
-    console.log(this.fecha);
-    console.log(this.item.fechaAlta);
-    //this.crudService.newItem(this.item).subscribe();
+    this.crudService.newItem(this.item).subscribe();
+
+    
   }
 
   fnSlcCategoria(nuevaCategoria:any){

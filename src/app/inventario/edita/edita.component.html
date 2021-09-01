@@ -1,18 +1,16 @@
-<p>edit works!</p>
-
 
 <!-- Tab grupo 1-->
 <mat-tab-group>
     <mat-tab label="Info 1"> 
 
         <label for="" class="lblCampoForm">Fecha de Alta</label><br>
-        <input type="datetime-local" [value]="fecha" name="fecha_alta" [(ngModel)]="fecha" ><br>
+        <input type="datetime-local" class="infoBase" [value]="fecha" name="fecha_alta" [(ngModel)]="fecha" ><br>
 
         <label for="" class="lblCampoForm">Nombre</label><br>
-        <input type="text" class="txtnombreitem" name="nombreItem" [(ngModel)]="item.nombreItem"><br>
+        <input type="text" class="txtnombreitem infoBase" name="nombreItem" [(ngModel)]="infoBase.nombreItem"><br>
 
         <label for="" class="lblCampoForm">Descripción</label><br>
-        <textarea name="descripcion" [(ngModel)]="item.descripcion"></textarea><br>
+        <textarea name="descripcion" class="infoBase" [(ngModel)]="infoBase.descripcion"></textarea><br>
 
     </mat-tab>
 
@@ -29,9 +27,9 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td class="tdfirst"><input type="text" name="marca_item" [(ngModel)]="item.pcdescr1.marcaItem"></td>
-                        <td><input type="text" name="modelo_item" [(ngModel)]="item.pcdescr1.modeloItem"></td>
-                        <td class="tdlast"><input type="text" name="serie_item" id="serieItem" [(ngModel)]="item.pcdescr1.serieItem"></td>
+                        <td class="tdfirst"><input type="text" name="marca_item" [(ngModel)]="pcdescr1.marcaItem"></td>
+                        <td><input type="text" name="modelo_item" [(ngModel)]="pcdescr1.modeloItem"></td>
+                        <td class="tdlast"><input type="text" name="serie_item" id="serieItem" [(ngModel)]="pcdescr1.serieItem"></td>
                     </tr>
                 </tbody>
                 <tfoot>
@@ -56,11 +54,11 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td class="tdfirst"><input type="text" name="cpu_item" id="cpuItem" [(ngModel)]="item.pcdescr2.cpuItem"></td>
-                        <td><input type="text" name="ram_item" id="ramItem" [(ngModel)]="item.pcdescr2.ramItem"></td>
-                        <td><input type="text" name="dd_capacidad" id="ddCapacidad" [(ngModel)]="item.pcdescr2.ddCapacidad"></td>
-                        <td class="tdlast"><input type="text" name="dd_tipo" id="ddTipo" [(ngModel)]="item.pcdescr2.ddTipo"></td>
-                        <td class="tdlast"><input type="text" name="pantalla_tamano" id="pantallaTamano" [(ngModel)]="item.pcdescr2.pantallaTamano"></td>
+                        <td class="tdfirst"><input type="text" name="cpu_item" id="cpuItem" [(ngModel)]="pcdescr2.cpuItem"></td>
+                        <td><input type="text" name="ram_item" id="ramItem" [(ngModel)]="pcdescr2.ramItem"></td>
+                        <td><input type="text" name="dd_capacidad" id="ddCapacidad" [(ngModel)]="pcdescr2.ddCapacidad"></td>
+                        <td class="tdlast"><input type="text" name="dd_tipo" id="ddTipo" [(ngModel)]="pcdescr2.ddTipo"></td>
+                        <td class="tdlast"><input type="text" name="pantalla_tamano" id="pantallaTamano" [(ngModel)]="pcdescr2.pantallaTamano"></td>
                     </tr>
                 </tbody>
                 <tfoot>
@@ -79,11 +77,11 @@
                 <thead><tr><td class="tdfirst">Tipo de consumible</td><td>Modelo Consumible</td><td>Tamaños de papel</td><td>Conexion de red</td><td  class="tdlast">Información de red</td> </tr></thead>
                 <tbody>
                     <tr>
-                        <td class="tdfirst"><input type="text" name="tipo_tinta" id="tipoTinta" [(ngModel)]="item.pcdescr3.tipoTinta"></td>
-                        <td><input type="text" name="modelo_tinta" id="modeloTinta" [(ngModel)]="item.pcdescr3.modeloTinta"></td>
-                        <td><input type="text" name="tamano_papel" id="tamanoPapel" [(ngModel)]="item.pcdescr3.tamanoPapel"></td>
-                        <td><select name="con_red" id="conRed" [(ngModel)]="item.pcdescr3.conRed"><option value="si">SI</option><option value="no">NO</option></select></td>
-                        <td class="tdlast"><textarea name="info_red" id="infoRed" [(ngModel)]="item.pcdescr3.infoRed"></textarea></td>
+                        <td class="tdfirst"><input type="text" name="tipo_tinta" id="tipoTinta" [(ngModel)]="pcdescr3.tipoTinta"></td>
+                        <td><input type="text" name="modelo_tinta" id="modeloTinta" [(ngModel)]="pcdescr3.modeloTinta"></td>
+                        <td><input type="text" name="tamano_papel" id="tamanoPapel" [(ngModel)]="pcdescr3.tamanoPapel"></td>
+                        <td><select name="con_red" id="conRed" [(ngModel)]="pcdescr3.conRed"><option value="si">SI</option><option value="no">NO</option></select></td>
+                        <td class="tdlast"><textarea name="info_red" id="infoRed" [(ngModel)]="pcdescr3.infoRed"></textarea></td>
                     </tr>
                 </tbody>
                 <tfoot>
@@ -125,7 +123,6 @@
             <option *ngFor="let lote of lotes" [value]="lote.ID">{{lote.nombre}}</option>
         </select><br>
         
-        
         <label for="" class="lblCampoForm">Stock Minimo</label><br>
         <input type="text" name="stockMinItem" [(ngModel)]="almacen.stock.min"><br>
 
@@ -139,27 +136,6 @@
         <textarea name="descrItem" [(ngModel)]="almacen.item.descr"></textarea><br>
 
         
-
-
-
-        <!--     
-        
-
-
-       
-
-
-        
-
-        
-
-       
-
-        <label for="" class="lblCampoForm">Manufacturero</label><br>
-        <input type="text" name="nombreItem" [(ngModel)]="nombreItem">
-
-
-        -->
     </mat-tab>
 
     <mat-tab label="Proveedores"> 
@@ -168,8 +144,30 @@
         <label for="" class="lblCampoForm">Proveedor</label><br>
         <input type="text" name="nombreProv" [(ngModel)]="proveedor.nombre">
 
+        <label for="" class="lblCampoForm">Manufacturero</label><br>
+        <input type="text" name="manufactureroNombre" [(ngModel)]="proveedor.manufactureroNombre">
+
+        Estatus
+        codigo
+        razon social
+        rfc
+        calificacion
+        notas
+        direccion[]
+        telefono
+        giro/rubro
+        correo
+        siitio web
+        contacto[
+            nombre
+            puesto
+            telefono
+            correo
+        ]
+
 
     </mat-tab>
   </mat-tab-group>
 
- 
+  <button mat-raised-button color="primary" (click)="guardar()">Guardar</button>
+
